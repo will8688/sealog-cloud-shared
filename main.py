@@ -5,7 +5,7 @@ import os
 import warnings
 from urllib.parse import parse_qs
 
-# Suppress Streamlit event loop warnings during shutdown
+
 warnings.filterwarnings("ignore", message=".*Event loop is closed.*")
 warnings.filterwarnings("ignore", category=RuntimeWarning, module="asyncio")
 
