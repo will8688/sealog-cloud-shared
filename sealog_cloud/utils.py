@@ -2,7 +2,7 @@
 from datetime import datetime
 
 # Import database manager
-from ..database_manager import db_manager
+from database_manager import db_manager
 
 # Optional imports with fallbacks
 try:

@@ -6,7 +6,6 @@ This module provides admin-only vessel management components including
 edit forms, admin actions, and enhanced vessel management features.
 """
 
-import streamlit as st
 from typing import Optional, List, Dict, Any, Tuple
 import logging
 

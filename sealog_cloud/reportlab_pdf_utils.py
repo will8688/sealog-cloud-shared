@@ -2,8 +2,6 @@
 Enhanced PDF generation utilities using ReportLab for maritime applications
 Provides professional PDF layouts for watch schedules, logbooks, and reports
 """
-
-import streamlit as st
 import pandas as pd
 from datetime import datetime
 from typing import Dict, List, Optional, Any

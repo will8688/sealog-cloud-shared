@@ -6,8 +6,6 @@ This module provides UI components for vessel enhancement including
 "Find on BOAT International" and "Enrich from MarineTraffic" buttons,
 data preview interfaces, and merge conflict resolution.
 """
-
-import streamlit as st
 from typing import Optional, List, Dict, Any, Tuple
 import logging
 import json

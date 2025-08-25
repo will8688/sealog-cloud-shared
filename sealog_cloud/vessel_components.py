@@ -6,7 +6,6 @@ This module provides standardized Streamlit components for vessel selection,
 forms, and management interfaces used in Ships Log, Radio Log, and Crew Log.
 """
 
-import streamlit as st
 from typing import Optional, List, Dict, Any, Tuple
 from datetime import datetime, date
 import pandas as pd
