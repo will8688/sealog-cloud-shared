@@ -12,9 +12,9 @@ from typing import Optional, List, Dict, Any, Tuple
 import logging
 import json
 
-from shared.vessel_enhancement import VesselEnhancementService, EnhancementOpportunity, EnhancementResult
-from shared.vessel_merge import VesselDataMerger, MergeResult, MergeConflict
-from shared.vessel_service import VesselService
+from vessel_enhancement import VesselEnhancementService, EnhancementOpportunity, EnhancementResult
+from vessel_merge import VesselDataMerger, MergeResult, MergeConflict
+from vessel_service import VesselService
 
 logger = logging.getLogger(__name__)
 

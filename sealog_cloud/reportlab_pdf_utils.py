@@ -650,7 +650,7 @@ def integrate_reportlab_with_watch_scheduler():
     Integration instructions for existing watch scheduler:
     
     1. Add this import to your watch_scheduler.py:
-       from core.reportlab_pdf_utils import export_watch_schedule_reportlab_pdf, check_reportlab_installation
+       from reportlab_pdf_utils import export_watch_schedule_reportlab_pdf, check_reportlab_installation
     
     2. Update your export_schedule_pdf function:
     """
@@ -673,7 +673,7 @@ def export_schedule_pdf(schedule_id: int, assignments_df: pd.DataFrame):
         schedule_data = schedule_df.iloc[0].to_dict()
         
         # Try ReportLab first
-        from core.reportlab_pdf_utils import export_watch_schedule_reportlab_pdf, REPORTLAB_AVAILABLE
+        from reportlab_pdf_utils import export_watch_schedule_reportlab_pdf, REPORTLAB_AVAILABLE
         
         if REPORTLAB_AVAILABLE:
             export_watch_schedule_reportlab_pdf(schedule_data, assignments_df)
@@ -1242,7 +1242,7 @@ def integrate_with_risk_assessment_tool():
     Integration instructions for your risk assessment tool:
     
     1. Add this import to your risk_assessment.py:
-       from core.reportlab_pdf_utils import export_risk_assessment_professional_pdf, REPORTLAB_AVAILABLE
+       from reportlab_pdf_utils import export_risk_assessment_professional_pdf, REPORTLAB_AVAILABLE
     
     2. Update your assessment display function to include PDF export:
     """

@@ -20,7 +20,7 @@ def render_settings():
 
 def render_theme_settings():
     """Render the theme selection settings"""
-    from ui.styling import AVAILABLE_THEMES, load_user_theme, save_user_theme
+    from styling import AVAILABLE_THEMES, load_user_theme, save_user_theme
     
     current_theme = load_user_theme()
     

@@ -576,7 +576,7 @@ def render_crew_management_panel(user_id: str) -> None:
             vessel_service = st.session_state.settings_vessel_service
         else:
             # Import and create vessel service if needed
-            from shared.vessel_service import VesselService
+            from vessel_service import VesselService
             vessel_service = VesselService(db_manager, user_id)
             # Store for reuse
             st.session_state.settings_vessel_service = vessel_service

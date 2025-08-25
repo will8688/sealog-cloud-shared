@@ -11,7 +11,7 @@ warnings.filterwarnings("ignore", category=RuntimeWarning, module="asyncio")
 
 # Import database manager at the top
 from sealog_cloud.database_manager import db_manager
-from sealog_cloud.ui.mobile_css import apply_global_mobile_fixes
+from sealog_cloud.mobile_css import apply_global_mobile_fixes
 
 # SAFE ROUTER IMPLEMENTATION
 

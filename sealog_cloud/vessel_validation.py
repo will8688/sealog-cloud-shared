@@ -12,7 +12,7 @@ from typing import List, Dict, Any, Tuple, Optional
 from datetime import datetime, date
 import logging
 
-from schemas.vessel_schema import VesselType, BaseVessel, YachtSchema
+from vessel_schema import VesselType, BaseVessel, YachtSchema
 
 logger = logging.getLogger(__name__)
 

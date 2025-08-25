@@ -475,7 +475,7 @@ def clear_persistent_login():
 def set_cookie(name: str, value: str, expires_days: int = 7):
     """Set a cookie using improved cookie manager"""
     try:
-        from components.cookie_manager import set_cookie_component
+        from cookie_manager import set_cookie_component
         set_cookie_component(name, value, expires_days)
         
         # Also store in session state for immediate access
@@ -504,7 +504,7 @@ def get_cookie(name: str) -> str:
         
         # Try to get from cookie manager
         try:
-            from components.cookie_manager import get_cookies_from_browser
+            from cookie_manager import get_cookies_from_browser
             cookies = get_cookies_from_browser()
             if name in cookies:
                 # Store in session state for next time
@@ -526,7 +526,7 @@ def get_cookie(name: str) -> str:
 def delete_cookie(name: str):
     """Delete a cookie using improved cookie manager"""
     try:
-        from components.cookie_manager import delete_cookie_component
+        from cookie_manager import delete_cookie_component
         delete_cookie_component(name)
     except ImportError:
         # Fallback to basic JavaScript method
@@ -597,7 +597,7 @@ def save_cookie_session(user_id: int, username: str):
         
         # Use the secure session manager (no URL parameters, no browser storage exposure)
         try:
-            from components.secure_sessions import save_secure_session
+            from secure_sessions import save_secure_session
             return save_secure_session(user_id, username, db_session_token)
         except ImportError:
             # Fallback to session state only (still secure, just not persistent)
@@ -616,7 +616,7 @@ def load_cookie_session() -> bool:
     try:
         # Load from secure session manager
         try:
-            from components.secure_sessions import load_secure_session
+            from secure_sessions import load_secure_session
             session_data = load_secure_session()
         except ImportError:
             # Fallback to session state check
@@ -687,7 +687,7 @@ def clear_cookie_session():
         
         # Try secure session manager first
         try:
-            from components.secure_sessions import load_secure_session, clear_secure_session
+            from secure_sessions import load_secure_session, clear_secure_session
             session_data = load_secure_session()
             if session_data:
                 auth_token = session_data.get('auth_token')
@@ -722,7 +722,7 @@ def clear_cookie_session():
 def render_tool_showcase():
     """Render the tool showcase panel"""
     # Import styling functions
-    from ui.styling import render_auth_header
+    from styling import render_auth_header
     
     # Use CSS classes instead of inline styles
     st.markdown('<div class="category-header"> Essential Logbooks - Core Maritime Documentation</div>', unsafe_allow_html=True)
@@ -909,7 +909,7 @@ def render_tool_showcase():
 def enhanced_login_page():
     """Enhanced login page with tool showcase and invitation handling"""
     # Import styling functions
-    from ui.styling import render_auth_header, render_auth_value_props, render_auth_cta_section
+    from styling import render_auth_header, render_auth_value_props, render_auth_cta_section
     
     # CHECK FOR INVITATION TOKEN FIRST
     has_invitation = check_for_invitation_token()

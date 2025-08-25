@@ -11,12 +11,12 @@ from typing import Optional, List, Dict, Any, Tuple
 from datetime import datetime, date
 import pandas as pd
 
-from schemas.vessel_schema import (
+from vessel_schema import (
     VesselType, YachtCategory, HullMaterial, PropulsionType, 
     ClassificationSociety, BuildStandard
 )
-from shared.vessel_service import VesselService
-from schemas.vessel_schema import get_flag_states, get_design_categories, get_design_category_description
+from vessel_service import VesselService
+from vessel_schema import get_flag_states, get_design_categories, get_design_category_description
 
 # ============================================================================
 # VESSEL SELECTION COMPONENTS

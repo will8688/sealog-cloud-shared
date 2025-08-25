@@ -12,15 +12,15 @@ import logging
 from dataclasses import asdict
 
 # Import your existing vessel schema
-from schemas.vessel_schema import (
+from vessel_schema import (
     BaseVessel, YachtSchema, VesselType, create_vessel_from_type,
     validate_vessel_data, export_vessel_to_json
 )
 
 # Import separate modules (to be created next)
-from shared.vessel_database import VesselDatabase
-from shared.vessel_validation import VesselValidator
-from shared.vessel_external_apis import ExternalVesselAPIs
+from vessel_database import VesselDatabase
+from vessel_validation import VesselValidator
+from vessel_external_apis import ExternalVesselAPIs
 
 logger = logging.getLogger(__name__)
 
