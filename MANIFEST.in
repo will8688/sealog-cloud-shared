@@ -1,0 +1,21 @@
+include README.md
+include requirements.txt
+include *.json
+include *.yaml
+include *.yml
+recursive-include sealog_cloud *.py
+recursive-include sealog_cloud *.json
+recursive-include sealog_cloud *.yaml
+recursive-include sealog_cloud *.yml
+recursive-include sealog_cloud *.txt
+recursive-include sealog_cloud *.md
+exclude venv
+exclude env
+exclude __pycache__
+exclude *.pyc
+exclude .git
+exclude .gitignore
+exclude bin
+exclude include
+exclude lib
+exclude pyvenv.cfg
