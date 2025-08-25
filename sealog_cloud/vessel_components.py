@@ -1,3 +1,4 @@
+import streamlit as st
 """
 Vessel Streamlit Components
 Reusable UI components for vessel management across maritime tools

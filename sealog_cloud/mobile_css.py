@@ -4,6 +4,7 @@ Global Mobile CSS - Conservative Approach
 Fixes major mobile issues without breaking existing functionality
 Add this to your main app file - safe and non-disruptive
 """
+import streamlit as st
 
 def inject_global_mobile_css():
     """

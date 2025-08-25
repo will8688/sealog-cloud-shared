@@ -1,3 +1,4 @@
+import streamlit as st
 """
 Secure session persistence using temporary files
 SECURITY: No data exposed in URLs or browser storage - uses secure server-side files

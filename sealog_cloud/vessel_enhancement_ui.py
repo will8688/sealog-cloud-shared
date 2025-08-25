@@ -1,3 +1,4 @@
+import streamlit as st
 """
 Vessel Enhancement UI Components - FIXED VERSION
 User interface components for vessel data enhancement and merging

@@ -1,3 +1,4 @@
+import streamlit as st
 """
 Vessel Admin Components - FIXED VERSION
 Admin-specific vessel management UI components

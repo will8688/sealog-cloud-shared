@@ -6,6 +6,7 @@ import pandas as pd
 from datetime import datetime
 from typing import Dict, List, Optional, Any
 import io
+import streamlit as st
 
 try:
     from reportlab.lib.pagesizes import A4, letter
