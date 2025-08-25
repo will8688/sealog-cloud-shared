@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "sealog-cloud-shared"
-version = "0.1.4"
+version = "0.1.5"
 description = "SeaLog Cloud Shared - Maritime logging and vessel management system"
 authors = [{name = "SeaLog", email = "admin@sealog.com"}]
 license = "MIT"
