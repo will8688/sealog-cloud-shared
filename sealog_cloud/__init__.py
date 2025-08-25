@@ -2,7 +2,7 @@
 SeaLog Cloud Shared - Maritime logging and vessel management system
 """
 
-__version__ = "0.1.0"
+__version__ = "0.1.1"
 __author__ = "SeaLog"
 __email__ = "admin@sealog.com"
 
