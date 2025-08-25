@@ -2,19 +2,47 @@
 SeaLog Cloud Shared - Maritime logging and vessel management system
 """
 
-__version__ = "0.1.1"
+__version__ = "0.1.2"
 __author__ = "SeaLog"
 __email__ = "admin@sealog.com"
 
-from .core.utils import init_database, init_session_state
-from .database_manager import db_manager
-from .authentication import check_persistent_login, login_page, check_payment_status
+# Lazy imports to avoid dependency issues during package installation
+def get_core_utils():
+    """Get core utilities with lazy import."""
+    from .core.utils import init_database, init_session_state
+    return init_database, init_session_state
 
-__all__ = [
-    "init_database",
-    "init_session_state", 
-    "db_manager",
-    "check_persistent_login",
-    "login_page",
-    "check_payment_status",
-]
+def get_db_manager():
+    """Get database manager with lazy import."""
+    from .database_manager import db_manager
+    return db_manager
+
+def get_auth_functions():
+    """Get authentication functions with lazy import."""
+    from .authentication import check_persistent_login, login_page, check_payment_status
+    return check_persistent_login, login_page, check_payment_status
+
+# Optional direct imports if dependencies are available
+try:
+    from .core.utils import init_database, init_session_state
+    from .database_manager import db_manager
+    from .authentication import check_persistent_login, login_page, check_payment_status
+    
+    __all__ = [
+        "init_database",
+        "init_session_state", 
+        "db_manager",
+        "check_persistent_login",
+        "login_page",
+        "check_payment_status",
+        "get_core_utils",
+        "get_db_manager", 
+        "get_auth_functions",
+    ]
+except ImportError:
+    # Dependencies not available, use lazy loading functions only
+    __all__ = [
+        "get_core_utils",
+        "get_db_manager",
+        "get_auth_functions",
+    ]
