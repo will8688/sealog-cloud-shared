@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "sealog-cloud-shared"
-version = "0.1.9"
+version = "0.2.0"
 description = "SeaLog Cloud Shared - Maritime logging and vessel management system"
 authors = [{name = "SeaLog", email = "admin@sealog.com"}]
 license = "MIT"
@@ -26,7 +26,7 @@ classifiers = [
 
 dependencies = [
     "streamlit>=1.40.0",
-    "sqlalchemy>=2.0.0",
+    "sqlalchemy>=1.4.53",
     "python-dotenv>=1.0.0",
     "pandas>=2.0.0",
     "reportlab>=4.0.0",
