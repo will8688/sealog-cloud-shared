@@ -2,7 +2,7 @@ import streamlit as st
 
 
 # Import database manager
-from database_manager import db_manager
+from .database_manager import db_manager
 
 def render_settings():
     

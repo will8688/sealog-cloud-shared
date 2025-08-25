@@ -8,10 +8,10 @@ and other external data sources to automatically populate and enrich vessel data
 
 import logging
 from typing import Optional, Dict, Any, List
-from .external_apis.base_scraper import APIResponse
-from .external_apis.marinetraffic_api import MarineTrafficAPI
-from .external_apis.boat_international_scraper import BoatInternationalScraper
-from .external_apis.wordpress_importer import WordPressImporter
+from .base_scraper import APIResponse
+from .marinetraffic_api import MarineTrafficAPI
+from .boat_international_scraper import BoatInternationalScraper
+from .wordpress_importer import WordPressImporter
 
 logger = logging.getLogger(__name__)
 

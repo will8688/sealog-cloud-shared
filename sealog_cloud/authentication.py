@@ -6,7 +6,7 @@ import base64
 from datetime import datetime, timedelta
 import streamlit as st
 from typing import Optional, Dict, Any
-from database_manager import db_manager
+from .database_manager import db_manager
 
 def check_for_invitation_token():
     """Check if user arrived via invitation link and display invitation info"""
