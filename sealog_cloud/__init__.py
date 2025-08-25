@@ -22,27 +22,9 @@ def get_auth_functions():
     from .authentication import check_persistent_login, login_page, check_payment_status
     return check_persistent_login, login_page, check_payment_status
 
-# Optional direct imports if dependencies are available
-try:
-    from .core.utils import init_database, init_session_state
-    from .database_manager import db_manager
-    from .authentication import check_persistent_login, login_page, check_payment_status
-    
-    __all__ = [
-        "init_database",
-        "init_session_state", 
-        "db_manager",
-        "check_persistent_login",
-        "login_page",
-        "check_payment_status",
-        "get_core_utils",
-        "get_db_manager", 
-        "get_auth_functions",
-    ]
-except ImportError:
-    # Dependencies not available, use lazy loading functions only
-    __all__ = [
-        "get_core_utils",
-        "get_db_manager",
-        "get_auth_functions",
-    ]
+# Always use lazy loading to avoid import errors
+__all__ = [
+    "get_core_utils",
+    "get_db_manager",
+    "get_auth_functions",
+]
