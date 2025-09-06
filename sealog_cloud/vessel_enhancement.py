@@ -12,10 +12,10 @@ from datetime import datetime
 from dataclasses import dataclass
 from enum import Enum
 
-from vessel_service import VesselService
-from vessel_external_apis import ExternalVesselAPIs
-from vessel_schema import BaseVessel
-from vessel_merge import MergeConflict, DataReliability  # FIXED: Import MergeConflict
+from shared.vessel_service import VesselService
+from shared.vessel_external_apis import ExternalVesselAPIs
+from schemas.vessel_schema import BaseVessel
+from shared.vessel_merge import MergeConflict, DataReliability  # FIXED: Import MergeConflict
 
 logger = logging.getLogger(__name__)
 

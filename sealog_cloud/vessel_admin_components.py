@@ -1,4 +1,3 @@
-import streamlit as st
 """
 Vessel Admin Components - FIXED VERSION
 Admin-specific vessel management UI components
@@ -7,13 +6,14 @@ This module provides admin-only vessel management components including
 edit forms, admin actions, and enhanced vessel management features.
 """
 
+import streamlit as st
 from typing import Optional, List, Dict, Any, Tuple
 import logging
 
-from vessel_service import VesselService
-from vessel_components import render_vessel_form, render_vessel_details
-from vessel_enhancement import VesselEnhancementService
-from vessel_enhancement_ui import (
+from shared.vessel_service import VesselService
+from shared.vessel_components import render_vessel_form, render_vessel_details
+from shared.vessel_enhancement import VesselEnhancementService
+from shared.vessel_enhancement_ui import (
     integrate_enhancement_with_vessel_details,
     EnhancementSessionManager,
     cleanup_enhancement_session
@@ -673,7 +673,7 @@ def render_admin_debug_panel(
         
         # Show enhancement session info
         try:
-            from vessel_enhancement_ui import get_enhancement_session_info
+            from shared.vessel_enhancement_ui import get_enhancement_session_info
             session_info = get_enhancement_session_info()
             st.json(session_info)
         except Exception as e:

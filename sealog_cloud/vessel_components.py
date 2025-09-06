@@ -1,4 +1,3 @@
-import streamlit as st
 """
 Vessel Streamlit Components
 Reusable UI components for vessel management across maritime tools
@@ -7,16 +6,17 @@ This module provides standardized Streamlit components for vessel selection,
 forms, and management interfaces used in Ships Log, Radio Log, and Crew Log.
 """
 
+import streamlit as st
 from typing import Optional, List, Dict, Any, Tuple
 from datetime import datetime, date
 import pandas as pd
 
-from vessel_schema import (
+from schemas.vessel_schema import (
     VesselType, YachtCategory, HullMaterial, PropulsionType, 
     ClassificationSociety, BuildStandard
 )
-from vessel_service import VesselService
-from vessel_schema import get_flag_states, get_design_categories, get_design_category_description
+from shared.vessel_service import VesselService
+from schemas.vessel_schema import get_flag_states, get_design_categories, get_design_category_description
 
 # ============================================================================
 # VESSEL SELECTION COMPONENTS
@@ -172,10 +172,16 @@ def render_vessel_form(
                 help="Official vessel name"
             )
             
+            vessel_type_options = [vt.value for vt in VesselType]
+            current_vessel_type = form_data.get('vessel_type', 'yacht')
+            # Handle None or invalid values by defaulting to yacht
+            if current_vessel_type not in vessel_type_options:
+                current_vessel_type = 'yacht'
+                
             form_data['vessel_type'] = st.selectbox(
                 "Vessel Type *",
-                options=[vt.value for vt in VesselType],
-                index=[vt.value for vt in VesselType].index(form_data.get('vessel_type', 'yacht')),
+                options=vessel_type_options,
+                index=vessel_type_options.index(current_vessel_type),
                 format_func=lambda x: x.replace('_', ' ').title()
             )
             
@@ -296,10 +302,16 @@ def render_vessel_form(
                 help="Shipyard or manufacturer"
             )
             
+            hull_material_options = [hm.value for hm in HullMaterial]
+            current_hull_material = form_data.get('hull_material', 'fiberglass')
+            # Handle None or invalid values by defaulting to fiberglass
+            if current_hull_material not in hull_material_options:
+                current_hull_material = 'fiberglass'
+                
             form_data['hull_material'] = st.selectbox(
                 "Hull Material",
-                options=[hm.value for hm in HullMaterial],
-                index=[hm.value for hm in HullMaterial].index(form_data.get('hull_material', 'fiberglass')),
+                options=hull_material_options,
+                index=hull_material_options.index(current_hull_material),
                 format_func=lambda x: x.replace('_', ' ').title()
             )
         
@@ -380,10 +392,16 @@ def render_advanced_vessel_fields(form_data: Dict[str, Any], key: str):
         col1, col2, col3 = st.columns(3)
         
         with col1:
+            yacht_category_options = [''] + [yc.value for yc in YachtCategory]
+            current_yacht_category = form_data.get('yacht_category', '')
+            # Handle None or invalid values by defaulting to empty
+            if current_yacht_category not in yacht_category_options:
+                current_yacht_category = ''
+                
             form_data['yacht_category'] = st.selectbox(
                 "Yacht Category",
-                options=[''] + [yc.value for yc in YachtCategory],
-                index=([''] + [yc.value for yc in YachtCategory]).index(form_data.get('yacht_category', '')),
+                options=yacht_category_options,
+                index=yacht_category_options.index(current_yacht_category),
                 format_func=lambda x: x.replace('_', ' ').title() if x else "Not specified"
             )
             
@@ -455,10 +473,16 @@ def render_advanced_vessel_fields(form_data: Dict[str, Any], key: str):
     col1, col2 = st.columns(2)
     
     with col1:
+        propulsion_type_options = [''] + [pt.value for pt in PropulsionType]
+        current_propulsion_type = form_data.get('propulsion_type', '')
+        # Handle None or invalid values by defaulting to empty
+        if current_propulsion_type not in propulsion_type_options:
+            current_propulsion_type = ''
+            
         form_data['propulsion_type'] = st.selectbox(
             "Propulsion Type",
-            options=[''] + [pt.value for pt in PropulsionType],
-            index=([''] + [pt.value for pt in PropulsionType]).index(form_data.get('propulsion_type', '')),
+            options=propulsion_type_options,
+            index=propulsion_type_options.index(current_propulsion_type),
             format_func=lambda x: x.replace('_', ' ').title() if x else "Not specified"
         )
         
@@ -490,10 +514,16 @@ def render_advanced_vessel_fields(form_data: Dict[str, Any], key: str):
     col1, col2 = st.columns(2)
     
     with col1:
+        classification_society_options = [''] + [cs.value for cs in ClassificationSociety]
+        current_classification_society = form_data.get('classification_society', '')
+        # Handle None or invalid values by defaulting to empty
+        if current_classification_society not in classification_society_options:
+            current_classification_society = ''
+            
         form_data['classification_society'] = st.selectbox(
             "Classification Society",
-            options=[''] + [cs.value for cs in ClassificationSociety],
-            index=([''] + [cs.value for cs in ClassificationSociety]).index(form_data.get('classification_society', '')),
+            options=classification_society_options,
+            index=classification_society_options.index(current_classification_society),
             format_func=lambda x: x.upper() if x else "Not specified"
         )
     

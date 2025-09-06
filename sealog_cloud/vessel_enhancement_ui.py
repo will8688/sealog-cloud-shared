@@ -1,4 +1,3 @@
-import streamlit as st
 """
 Vessel Enhancement UI Components - FIXED VERSION
 User interface components for vessel data enhancement and merging
@@ -7,13 +6,15 @@ This module provides UI components for vessel enhancement including
 "Find on BOAT International" and "Enrich from MarineTraffic" buttons,
 data preview interfaces, and merge conflict resolution.
 """
+
+import streamlit as st
 from typing import Optional, List, Dict, Any, Tuple
 import logging
 import json
 
-from vessel_enhancement import VesselEnhancementService, EnhancementOpportunity, EnhancementResult
-from vessel_merge import VesselDataMerger, MergeResult, MergeConflict
-from vessel_service import VesselService
+from shared.vessel_enhancement import VesselEnhancementService, EnhancementOpportunity, EnhancementResult
+from shared.vessel_merge import VesselDataMerger, MergeResult, MergeConflict
+from shared.vessel_service import VesselService
 
 logger = logging.getLogger(__name__)
 

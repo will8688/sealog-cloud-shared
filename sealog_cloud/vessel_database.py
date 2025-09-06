@@ -12,7 +12,7 @@ import logging
 import json
 from dataclasses import asdict
 
-from vessel_schema import BaseVessel, YachtSchema
+from schemas.vessel_schema import BaseVessel, YachtSchema
 
 logger = logging.getLogger(__name__)
 

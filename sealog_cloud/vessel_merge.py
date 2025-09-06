@@ -12,8 +12,8 @@ from datetime import datetime, date
 from enum import Enum
 from dataclasses import dataclass
 
-from vessel_schema import BaseVessel, VesselType, YachtSchema, HullMaterial, PropulsionType, ClassificationSociety
-from vessel_validation import VesselValidator
+from schemas.vessel_schema import BaseVessel, VesselType, YachtSchema, HullMaterial, PropulsionType, ClassificationSociety
+from shared.vessel_validation import VesselValidator
 
 logger = logging.getLogger(__name__)
 
